@@ -1,4 +1,5 @@
 fn main() {
+    let count: u32 = 1;
     println!("Hello, world!");
-    println!("Hello, Cargo!!!!")
+    println!("This project is being made by {} person!", count)
 }
