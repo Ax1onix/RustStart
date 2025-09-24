@@ -10,8 +10,9 @@ fn main() -> io::Result<()> {
     );
     println!("How many people are working on the project?????");
     let mut input = String::new();
-    io::stdin().read_line(&mut input)?;
-    if input == "1" {
+    io::stdin().read_line(&mut input).expect("ERROR IN INPUT");
+    let input: u32 = input.trim().parse().expect("ERROR");
+    if input == 1 {
         loop {
             println!("GOOD JOB!!!");
         }
