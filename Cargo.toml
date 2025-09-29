@@ -2,4 +2,7 @@
 name = "RustStart"
 version = "0.1.8"
 edition = "2024"
+
 [dependencies]
+async-std = { version = "1.12", features = ["attributes"] }
+
