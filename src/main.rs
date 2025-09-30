@@ -1,4 +1,4 @@
-use std::io;
+use std::io::{self, Write};
 use std::{time::Duration};
 use async_std::task;
 
@@ -33,12 +33,18 @@ async fn main() {
     };
 
     if input == 1 {
-        loop { // Example: repeat 5 times
+        for _ in 0..5 { // Example: repeat 5 times
             println!("GOOD JOB!!!");
+        }
+        let mes = "You`re doin good lad.  :)";
+        for c in mes.chars(){
+            print!("{}", c);
+            io::stdout().flush().unwrap();
+            task::sleep(Duration::from_millis(500)).await;
         }
     } else {
         FaN().await;
-        loop { // Example: repeat 5 times
+        loop { // Example: repeat FOREVAR
             println!("{}{}WRONG!!!!{}{}", skull, skull, skull, skull);
         }
     }
